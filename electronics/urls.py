@@ -12,20 +12,10 @@ from electronics.views import (
 app_name = ElectronicsConfig.name
 
 urlpatterns = [
+    path("electronicsnetwork/create/", ElectronicsNetworkCreateAPIView.as_view(), name="electronicsnetwork-create"),
+    path("electronicsnetwork/", ElectronicsNetworkListAPIView.as_view(), name="electronicsnetwork-list"),
     path(
-        "electronicsnetwork/create/",
-        ElectronicsNetworkCreateAPIView.as_view(),
-        name="electronicsnetwork-create",
-    ),
-    path(
-        "electronicsnetwork/",
-        ElectronicsNetworkListAPIView.as_view(),
-        name="electronicsnetwork-list",
-    ),
-    path(
-        "electronicsnetwork/<int:pk>/",
-        ElectronicsNetworkRetrieveAPIView.as_view(),
-        name="electronicsnetwork-detail",
+        "electronicsnetwork/<int:pk>/", ElectronicsNetworkRetrieveAPIView.as_view(), name="electronicsnetwork-detail"
     ),
     path(
         "electronicsnetwork/<int:pk>/update/",
